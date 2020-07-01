@@ -1,13 +1,11 @@
 ﻿using SUNDAY.Model.Entities;
+using SUNDAY.Model.Enums;
 using System;
 
 namespace SUNDAY.Model.Services.Taxes.TaxStrategy.Strategies
 {
-    public class YearlyTaxStrategy : ITaxStrategy
+    public class YearlyTaxStrategy : TaxStrategyBase
     {
-        public Tax GetTax(int municipalityId, DateTime date)
-        {
-            throw new NotImplementedException();
-        }
+        public override Tuple<TaxTypes, DateTime, DateTime?> GetArguments(DateTime date) => Tuple.Create<TaxTypes, DateTime, DateTime?>(TaxTypes.Yearly, date.AddYears(-1), date.AddYears(1));
     }
 }

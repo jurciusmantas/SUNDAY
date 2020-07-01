@@ -1,7 +1,7 @@
 ﻿using SUNDAY.Model.Entities;
 using System;
 
-namespace SUNDAY.Model.Services.Taxes.TaxStrategy
+namespace SUNDAY.Model.Services.Taxes.TaxStrategy.Strategies
 {
     public interface ITaxStrategy
     {

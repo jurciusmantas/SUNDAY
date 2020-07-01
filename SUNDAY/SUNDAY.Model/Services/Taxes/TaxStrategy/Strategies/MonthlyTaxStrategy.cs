@@ -1,13 +1,13 @@
-﻿using SUNDAY.Model.Entities;
+﻿using MySql.Data.MySqlClient;
+using SUNDAY.Model.Entities;
+using SUNDAY.Model.Enums;
+using SUNDAY.Repository;
 using System;
 
 namespace SUNDAY.Model.Services.Taxes.TaxStrategy.Strategies
 {
-    public class MonthlyTaxStrategy : ITaxStrategy
+    public class MonthlyTaxStrategy : TaxStrategyBase
     {
-        public Tax GetTax(int municipalityId, DateTime date)
-        {
-            throw new System.NotImplementedException();
-        }
+        public override Tuple<TaxTypes, DateTime, DateTime?> GetArguments(DateTime date) => Tuple.Create<TaxTypes, DateTime, DateTime?>(TaxTypes.Monthly, date.AddMonths(-1), date.AddMonths(1));
     }
 }

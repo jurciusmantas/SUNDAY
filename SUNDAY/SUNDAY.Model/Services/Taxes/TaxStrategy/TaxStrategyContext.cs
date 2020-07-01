@@ -10,10 +10,10 @@ namespace SUNDAY.Model.Services.Taxes.TaxStrategy
         {
             return type switch
             {
-                TaxTypes.Daily => IDailyTaxStrategy(),
+                TaxTypes.Daily => new DailyTaxStrategy(),
                 TaxTypes.Weekly => new WeeklyTaxStrategy(),
                 TaxTypes.Monthly => new MonthlyTaxStrategy(),
-                TaxTypes.Yearly => new MonthlyTaxStrategy(),
+                TaxTypes.Yearly => new YearlyTaxStrategy(),
                 _ => throw new NotSupportedException(),
             };
         }
