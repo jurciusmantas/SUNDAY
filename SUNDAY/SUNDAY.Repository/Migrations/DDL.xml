@@ -1,0 +1,8 @@
+﻿<xml>
+	<sql table="municipalities">
+		CREATE TABLE `sunday`.`municipalities` (
+		`Id` INT NOT NULL AUTO_INCREMENT,
+		`Name` VARCHAR(255) NOT NULL,
+		PRIMARY KEY (`Id`));
+	</sql>
+</xml>
