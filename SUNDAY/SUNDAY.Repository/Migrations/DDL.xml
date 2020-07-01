@@ -1,8 +1,26 @@
-﻿<xml>
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<ddl>
 	<sql table="municipalities">
 		CREATE TABLE `sunday`.`municipalities` (
 		`Id` INT NOT NULL AUTO_INCREMENT,
 		`Name` VARCHAR(255) NOT NULL,
 		PRIMARY KEY (`Id`));
 	</sql>
-</xml>
+
+	<sql table="taxes">
+		CREATE TABLE `sunday`.`taxes` (
+		`Id` INT NOT NULL AUTO_INCREMENT,
+		`MunicipalityId` INT NOT NULL,
+		`Value` DECIMAL NOT NULL,
+		`Type` INT NOT NULL,
+		`Date` DATE NOT NULL,
+		PRIMARY KEY (`Id`),
+		INDEX `fk_municipality_id_idx` (`MunicipalityId` ASC),
+		UNIQUE INDEX `uq_municipality_date` (`MunicipalityId` ASC, `Date` ASC),
+		CONSTRAINT `fk_municipality_id`
+		FOREIGN KEY (`MunicipalityId`)
+		REFERENCES `sunday`.`municipalities` (`Id`)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION);
+	</sql>
+</ddl>

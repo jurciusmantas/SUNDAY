@@ -5,6 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Properties\connectionStrings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Properties\connectionStrings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SUNDAY.Model\SUNDAY.Model.csproj" />
   </ItemGroup>
 

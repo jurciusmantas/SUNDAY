@@ -1,7 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Reflection;
 
 namespace SUNDAY.Repository
@@ -13,9 +15,12 @@ namespace SUNDAY.Repository
         {
             try
             {
+                var myJsonString = File.ReadAllText("Properties/connectionStrings.json");
+                var myJObject = JObject.Parse(myJsonString);
+
                 _connection = new MySqlConnection()
                 {
-                    ConnectionString = "server=localhost;user id=root;password=123123;database=sunday",
+                    ConnectionString = myJObject.SelectToken("connectionStrings").Value<string>(),
                 };
                 _connection.Open();
             }
