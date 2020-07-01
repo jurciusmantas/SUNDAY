@@ -8,7 +8,7 @@ Norint, kad projektas veiktų, reikia SUNDAY (Web Api'o) projekte "Properties" k
 
 {
 
-  "connectionStrings": "--jūsų connection string'ai--"
+  "connectionStrings": "server=localhost;user id=_user id_;password=_password_;database=_shcemos pav_"
 
 }
 
