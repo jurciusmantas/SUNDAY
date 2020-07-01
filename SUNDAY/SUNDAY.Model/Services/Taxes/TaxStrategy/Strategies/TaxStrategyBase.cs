@@ -9,7 +9,6 @@ namespace SUNDAY.Model.Services.Taxes.TaxStrategy
 {
     public abstract class TaxStrategyBase : ITaxStrategy
     {
-        //Todo: change to private?
         public abstract Tuple<TaxTypes, DateTime, DateTime?> GetArguments(DateTime date);
 
         public Tax GetTax(int municipalityId, DateTime date)

@@ -1,9 +1,7 @@
-﻿using MySql.Data.MySqlClient;
-using SUNDAY.Model.Entities;
+﻿using SUNDAY.Model.Entities;
 using SUNDAY.Model.Enums;
 using SUNDAY.Model.Repositories.Municipalities;
 using SUNDAY.Model.Services.Taxes.TaxStrategy;
-using SUNDAY.Repository;
 using System;
 using System.Linq;
 
@@ -45,7 +43,6 @@ namespace SUNDAY.Model.Services.Taxes
                 /* Log error */
                 return null;
             }
-            return new Tax();
         }
     }
 }

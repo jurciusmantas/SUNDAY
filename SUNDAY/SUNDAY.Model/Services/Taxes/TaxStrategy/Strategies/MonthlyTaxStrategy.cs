@@ -1,7 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using SUNDAY.Model.Entities;
-using SUNDAY.Model.Enums;
-using SUNDAY.Repository;
+﻿using SUNDAY.Model.Enums;
 using System;
 
 namespace SUNDAY.Model.Services.Taxes.TaxStrategy.Strategies
