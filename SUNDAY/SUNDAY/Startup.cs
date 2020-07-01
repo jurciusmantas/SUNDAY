@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SUNDAY.Model.Repositories.Municipalities;
 using SUNDAY.Model.Services.Taxes;
+using SUNDAY.Model.Services.Taxes.TaxStrategy;
 
 namespace SUNDAY
 {
@@ -24,6 +25,7 @@ namespace SUNDAY
 
             services.AddScoped<ITaxesService, TaxesService>();
             services.AddScoped<IMunicipalitiesRepository, MunicipalitiesRepository>();
+            services.AddSingleton<ITaxStrategyContext, TaxStrategyContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

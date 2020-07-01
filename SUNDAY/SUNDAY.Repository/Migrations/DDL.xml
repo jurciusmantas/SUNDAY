@@ -11,12 +11,12 @@
 		CREATE TABLE `sunday`.`taxes` (
 		`Id` INT NOT NULL AUTO_INCREMENT,
 		`MunicipalityId` INT NOT NULL,
-		`Value` DECIMAL NOT NULL,
+		`Value` DECIMAL(10,2) NOT NULL,
 		`Type` INT NOT NULL,
 		`Date` DATE NOT NULL,
 		PRIMARY KEY (`Id`),
 		INDEX `fk_municipality_id_idx` (`MunicipalityId` ASC),
-		UNIQUE INDEX `uq_municipality_date` (`MunicipalityId` ASC, `Date` ASC),
+		UNIQUE INDEX `uq_municipality_date` (`MunicipalityId` ASC, `Date` ASC, `Type` ASC),
 		CONSTRAINT `fk_municipality_id`
 		FOREIGN KEY (`MunicipalityId`)
 		REFERENCES `sunday`.`municipalities` (`Id`)

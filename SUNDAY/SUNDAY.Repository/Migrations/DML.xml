@@ -4,4 +4,12 @@
 		INSERT INTO municipalities (name) values
 		('Vilnius'), ('Kaunas');
 	</sql>
+
+	<sql table="taxes">
+		INSERT INTO taxes (MunicipalityId, Value, Type, Date) VALUES
+		(1, 0.2, 4, '2016-01-01'),
+		(1, 0.4, 3, '2016-05-01'),
+		(1, 0.1, 1, '2016-01-01'),
+		(1, 0.1, 1, '2016-12-25');
+	</sql>
 </dml>
